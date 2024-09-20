@@ -1,6 +1,10 @@
-const MenuItem = ({Lucide,itemName}) => {
+import { useNavigate } from "react-router-dom";
+
+const MenuItem = ({Lucide,itemName,path=""}) => {
+    const navigate = useNavigate();
     return ( 
         <div
+        onClick={()=>navigate(path)}
         className="w-full flex gap-2 items-center cursor-pointer hover:bg-foreground-200 p-2 rounded-lg"
         >
             <Lucide 

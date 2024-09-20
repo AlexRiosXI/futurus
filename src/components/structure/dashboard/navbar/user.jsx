@@ -1,13 +1,18 @@
 import { Avatar, Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,cn } from "@nextui-org/react";
 import { LucideArrowDown, LucideBuilding2, LucideChevronDown, LucideLogOut, LucideUser } from "lucide-react";
+import useApp from "../../../../appContext/useApp";
 
 const User = () => {
+  const {darkMode, userName} = useApp();
+
     const iconClasses = "text-xl text-default-500 pointer-events-none flex-shrink-0";
   return (
     <div className="flex gap-2 items-center">
-    <p>Alexander Ríos</p>
+    <p
+    className="font-semibold"
+    >{userName}</p>
     <Dropdown
-    className="dark text-foreground"
+    className={cn("text-foreground",darkMode)}
     >
       <DropdownTrigger>
         <Avatar
